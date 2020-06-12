@@ -1,0 +1,43 @@
+class RandomizedSet:
+
+    def __init__(self):
+        self.dict={}
+        """
+        Initialize your data structure here.
+        """
+        
+
+    def insert(self, val: int) -> bool:
+        if val not in self.dict:
+            self.dict.setdefault(val)
+            return True
+        else:
+            return False
+        """
+        Inserts a value to the set. Returns true if the set did not already contain the specified element.
+        """
+        
+
+    def remove(self, val: int) -> bool:
+        if val in self.dict:
+            self.dict.pop(val)
+            return True
+        return False
+        """
+        Removes a value from the set. Returns true if the set contained the specified element.
+        """
+        
+
+    def getRandom(self) -> int:
+        return random.choice(list(self.dict.keys()))
+        """
+        Get a random element from the set.
+        """
+        
+
+
+# Your RandomizedSet object will be instantiated and called as such:
+# obj = RandomizedSet()
+# param_1 = obj.insert(val)
+# param_2 = obj.remove(val)
+# param_3 = obj.getRandom()
